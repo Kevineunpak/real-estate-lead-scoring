@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Lead Scoring System</h2>
+  
+    <!-- Sender Email Input -->
+    <label for="email">Sender's Email</label>
+    <input type="email" id="email" [(ngModel)]="lead.email" placeholder="Enter sender's email" required />
+  
+    <!-- Lead Inquiry Textarea -->
+    <label for="message">Client Email Inquiry</label>
+    <textarea id="message" [(ngModel)]="lead.message" rows="6" placeholder="Paste the email inquiry here..." required></textarea>
+  
+    <!-- Submit Button -->
+    <button (click)="submitLead()" [disabled]="loading">
+      {{ loading ? 'Processing...' : 'Analyze Lead' }}
+    </button>
+  
+    <!-- Display Lead Score -->
+    <div *ngIf="leadScore !== null" class="score-box">
+      <h3>Lead Score: {{ leadScore }}/100</h3>
+      <p [ngClass]="getScoreClass(leadScore)">
+        {{ getScoreMessage(leadScore) }}
+      </p>
+    </div>
+  </div>
+  
