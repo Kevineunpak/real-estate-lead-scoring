@@ -5,8 +5,8 @@ import { LeadScoringService } from '../../services/lead-scoring.service';
 
 @Component({
   selector: 'app-lead-form',
-  standalone: true,  // ✅ Standalone component
-  imports: [CommonModule, FormsModule],  // ✅ Fixes `ngModel`, `*ngIf`, and `ngClass`
+  standalone: true,
+  imports: [CommonModule, FormsModule], 
   templateUrl: './lead-form.component.html',
   styleUrls: ['./lead-form.component.css']
 })
